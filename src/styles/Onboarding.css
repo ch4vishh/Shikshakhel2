@@ -1,0 +1,122 @@
+/* ============ ONBOARDING – LIGHT ============ */
+.onboarding-screen {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(160deg, #FFF0F7 0%, #EEF4FF 50%, #F0FFF8 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.onboarding-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.onboarding-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  animation: fadeInUp 0.4s ease both;
+}
+
+.onboarding-illustration {
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 90px;
+  margin: 0 auto;
+}
+
+.onboarding-illustration-1 {
+  background: radial-gradient(circle, rgba(253,121,168,0.2) 0%, rgba(253,121,168,0.04) 70%);
+  border: 3px solid rgba(253,121,168,0.25);
+  animation: floatDot 4s ease-in-out infinite;
+  box-shadow: 0 12px 40px rgba(253,121,168,0.2);
+}
+
+.onboarding-illustration-2 {
+  background: radial-gradient(circle, rgba(78,205,196,0.2) 0%, rgba(78,205,196,0.04) 70%);
+  border: 3px solid rgba(78,205,196,0.25);
+  animation: floatDot 5s ease-in-out infinite 1s;
+  box-shadow: 0 12px 40px rgba(78,205,196,0.2);
+}
+
+.onboarding-illustration-3 {
+  background: radial-gradient(circle, rgba(255,217,61,0.2) 0%, rgba(255,217,61,0.04) 70%);
+  border: 3px solid rgba(255,217,61,0.3);
+  animation: floatDot 4.5s ease-in-out infinite 0.5s;
+  box-shadow: 0 12px 40px rgba(255,217,61,0.2);
+}
+
+.onboarding-slide h2 {
+  font-size: 1.8rem;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+.onboarding-slide p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 320px;
+}
+
+/* Pills indicator */
+.onboarding-indicators {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.indicator-dot {
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(162, 155, 254, 0.25);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.indicator-dot.active {
+  width: 28px;
+  background: linear-gradient(90deg, var(--coral), var(--lavender));
+}
+
+.indicator-dot:not(.active) { width: 8px; }
+
+/* Footer nav */
+.onboarding-footer {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.onboarding-skip {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: color var(--transition-fast);
+  font-weight: 700;
+}
+
+.onboarding-skip:hover { color: var(--text-primary); }
+.onboarding-next { flex: 1; max-width: 200px; }

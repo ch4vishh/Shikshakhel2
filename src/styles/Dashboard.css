@@ -1,0 +1,225 @@
+/* ============ DASHBOARD SCREEN – LIGHT ============ */
+.dashboard-screen {
+  min-height: 100dvh;
+  background: linear-gradient(145deg, #FFF0F7 0%, #EEF4FF 50%, #F0FFF8 100%);
+  padding-bottom: 90px;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Top Bar */
+.dashboard-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 52px 20px 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.topbar-greeting-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 600; }
+
+.topbar-greeting-name {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--text-primary);
+}
+
+.topbar-avatar {
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255,107,107,0.15), rgba(162,155,254,0.15));
+  border: 2.5px solid rgba(255,255,255,0.9);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+  box-shadow: 0 4px 16px rgba(162,155,254,0.2);
+}
+
+.topbar-avatar:hover { transform: scale(1.08); }
+
+/* Stats Row */
+.dashboard-stats {
+  display: flex;
+  gap: 10px;
+  padding: 0 20px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-chip {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.80);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-md);
+  padding: 14px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  animation: fadeInUp 0.4s ease both;
+  box-shadow: 0 3px 14px rgba(162,155,254,0.10);
+}
+
+.stat-chip-icon { font-size: 1.5rem; }
+.stat-chip-value { font-family: var(--font-primary); font-size: 1.2rem; font-weight: 900; }
+.stat-chip-label { font-size: 0.66rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+
+/* Mission Card */
+.mission-card {
+  margin: 0 20px 20px;
+  padding: 24px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255,107,107,0.18) 0%, rgba(162,155,254,0.15) 100%) !important;
+  border: 1.5px solid rgba(255,107,107,0.2) !important;
+  box-shadow: 0 6px 28px rgba(255,107,107,0.12) !important;
+}
+
+.mission-card::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  pointer-events: none;
+}
+
+.mission-card-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--coral);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.mission-card-title {
+  font-family: var(--font-primary);
+  font-size: 1.3rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.mission-card-progress { margin-bottom: 20px; }
+.mission-card-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.mission-mascot {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 56px;
+  animation: floatDot 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Subject Cards */
+.subjects-section { padding: 0 20px; position: relative; z-index: 1; }
+
+.section-title {
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.subjects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.subject-card {
+  padding: 20px 16px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  transition: all var(--transition-med);
+  border: 1.5px solid transparent;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.subject-card:hover { transform: translateY(-3px); filter: brightness(1.03); }
+
+.subject-card-math {
+  background: linear-gradient(135deg, rgba(162,155,254,0.2) 0%, rgba(253,121,168,0.12) 100%);
+  border-color: rgba(162,155,254,0.35);
+}
+
+.subject-card-evs {
+  background: linear-gradient(135deg, rgba(107,203,119,0.2) 0%, rgba(78,205,196,0.15) 100%);
+  border-color: rgba(107,203,119,0.35);
+}
+
+.subject-card-icon { font-size: 2.2rem; }
+.subject-card-name { font-family: var(--font-primary); font-weight: 800; font-size: 1rem; color: var(--text-primary); }
+.subject-card-progress-text { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; }
+
+/* Badges Row */
+.badges-section { padding: 0 20px; position: relative; z-index: 1; }
+
+.badges-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.badges-scroll::-webkit-scrollbar { height: 0; }
+
+.badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  width: 72px;
+}
+
+.badge-icon-wrap {
+  width: 58px; height: 58px;
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px;
+  border: 2px solid rgba(255,255,255,0.9);
+  position: relative;
+  transition: all var(--transition-fast);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+}
+
+.badge-icon-wrap.earned {
+  background: linear-gradient(135deg, rgba(255,217,61,0.25), rgba(255,159,67,0.15));
+  border-color: rgba(255,217,61,0.5);
+  box-shadow: 0 0 14px rgba(255,217,61,0.25);
+}
+
+.badge-icon-wrap.locked {
+  background: rgba(162,155,254,0.06);
+  filter: grayscale(0.6) opacity(0.55);
+}
+
+.badge-item-label { font-size: 0.62rem; color: var(--text-muted); text-align: center; line-height: 1.2; font-weight: 600; }
